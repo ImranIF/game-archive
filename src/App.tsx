@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   ButtonGroup,
@@ -11,8 +11,11 @@ import {
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
+import type { Genre } from "./hooks/useGenres";
 
 const App = () => {
+  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+
   return (
     <Grid
       templateAreas={{
@@ -22,7 +25,7 @@ const App = () => {
       //define widths of the columns
       templateColumns={{
         base: "1fr", // column stretches full width on small screens
-        lg: "200px 1fr",
+        lg: "250px 1fr",
       }}
     >
       <GridItem area={"nav"}>
@@ -31,11 +34,11 @@ const App = () => {
       {/* when the viewport is lg or larger then Show the aside section */}
       <Show above="lg">
         <GridItem area={"aside"} paddingX={5}>
-          <GenreList />
+          <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
         </GridItem>
       </Show>
       <GridItem area={"main"}>
-        <GameGrid />
+        <GameGrid selectedGenre={selectedGenre} />
       </GridItem>
     </Grid>
   );
