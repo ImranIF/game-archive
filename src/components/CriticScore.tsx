@@ -13,7 +13,7 @@ const CriticScore = ({ score }: Props) => {
       fontSize={"14px"}
       paddingX={2}
       borderRadius={"4px"}
-      colorScheme={color}
+      colorScheme={color} // Chakra UI uses colorScheme applies entire color scheme including foreground and background colors
     >
       {score}
     </Badge>
