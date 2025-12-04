@@ -19,13 +19,18 @@ const App = () => {
         base: `"nav" "main"`,
         lg: `"nav nav" "aside main"`,
       }}
+      //define widths of the columns
+      templateColumns={{
+        base: "1fr", // column stretches full width on small screens
+        lg: "200px 1fr",
+      }}
     >
       <GridItem area={"nav"}>
         <NavBar />
       </GridItem>
       {/* when the viewport is lg or larger then Show the aside section */}
       <Show above="lg">
-        <GridItem area={"aside"}>
+        <GridItem area={"aside"} paddingX={5}>
           <GenreList />
         </GridItem>
       </Show>
