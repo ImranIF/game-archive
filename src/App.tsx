@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
+import GenreList from "./components/GenreList";
 
 const App = () => {
   return (
@@ -24,7 +25,9 @@ const App = () => {
       </GridItem>
       {/* when the viewport is lg or larger then Show the aside section */}
       <Show above="lg">
-        <GridItem area={"aside"}>Aside</GridItem>
+        <GridItem area={"aside"}>
+          <GenreList />
+        </GridItem>
       </Show>
       <GridItem area={"main"}>
         <GameGrid />
