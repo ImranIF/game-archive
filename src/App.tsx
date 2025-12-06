@@ -34,7 +34,10 @@ const App = () => {
       {/* when the viewport is lg or larger then Show the aside section */}
       <Show above="lg">
         <GridItem area={"aside"} paddingX={5}>
-          <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
+          <GenreList
+            selectedGenre={selectedGenre}
+            onSelectGenre={(genre) => setSelectedGenre(genre)}
+          />
         </GridItem>
       </Show>
       <GridItem area={"main"}>
