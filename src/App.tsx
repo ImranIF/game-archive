@@ -1,15 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Flex,
-  Grid,
-  GridItem,
-  HStack,
-  Show,
-} from "@chakra-ui/react";
+import { useState } from "react";
+import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
